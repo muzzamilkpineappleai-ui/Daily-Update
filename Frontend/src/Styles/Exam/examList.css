@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.exam-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.exam-search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.exam-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.exam-search-input:focus {
+   
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon1 {
+  position: absolute;
+  left: 250px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+  font-size: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.exam-add-btn {
+  width: 150px;
+  height: 46px;
+  border-radius: 5px;
+  background-color: #1F6978;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  padding: 13px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.add-btn:active {
+  transform: translateY(0);
+}
+
+.subject-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+
+.subject-header {
+  padding: 1rem 1.5rem;
+}
+
+.subject-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    text-align: left;
+}
+
+.exam-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.exam-table-header {
+    width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 20px 30px;
+   
+}
+
+.exam-table-header th {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  border-top: 1px solid #1F6978;
+  border-bottom: 1px solid #1F6978;
+  background-color: white;
+  box-shadow: 4px 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.exam-row {
+  transition: all 0.15s ease;
+}
+
+
+.exam-table tbody td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.grade-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.exam-type {
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.time-badge {
+ 
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.exam-action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;       
+  justify-content: center;  
+  margin: 0 auto;      
+  background: none;
+  border: none;      
+}
+
+.exam-delete-icon,.exam-edit-icon {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.btn-delete,.btn-edit{
+  border: none;
+  background: none;
+}
+
+.view-more {
+  background: #BCD2D7;
+  color: #1F6978;
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.form-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form-group input[type="time"] {
+  padding-right: 20px; /* Adjust for clock icon space */
+}
+
+.form-group input[type="date"] {
+  padding-right: 20px; /* Adjust for calendar icon space */
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4a7c7c;
+  box-shadow: 0 0 5px rgba(74, 124, 124, 0.5);
+}
+
+.create-group-btn {
+  width: 200px;
+  background-color: white;
+  padding: 10px;
+  color: #1F6978;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  left: 70%;
+  box-shadow: 0px 2px 8px 0px #00000033;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .exam-container {
+    padding: 1rem;
+  }
+
+  .exam-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .exam-search-container {
+    max-width: none;
+    order: 2;
+  }
+
+  .exam-add-btn {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .table-header th,
+  .table tbody td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .subject-title {
+    font-size: 1.1rem;
+  }
+
+  .exam-action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .exam-btn {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .exam-container {
+    padding: 0.5rem;
+  }
+
+  .subject-section {
+    margin-bottom: 1rem;
+  }
+
+  .table-header th,
+  .table tbody td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .grade-badge,
+  .exam-type,
+  .time-badge {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+  }
+}
+
+/* Loading and Animation States */
+.exam-row.deleting {
+  opacity: 0.5;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+.add-btn:focus,
+.search-input:focus,
+.view-more:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
