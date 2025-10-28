@@ -1,8 +1,9 @@
+import { Outlet } from "react-router-dom";
 
 function Report() {
   return (
     <div className="Report">
-      ReportList
+      <Outlet/>
     </div>
   );
 }

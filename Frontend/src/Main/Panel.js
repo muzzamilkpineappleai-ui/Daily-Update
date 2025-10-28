@@ -8,15 +8,20 @@ import Students from '../pages/Students';
 import Course from '../pages/Course';
 import Payments from '../pages/Payments';
 import Schedule from '../pages/Schedule';
-import Report from '../pages/Report';
 import Settings from '../pages/Settings';
 import Branch from '../pages/Branch';
 import Attendance from '../pages/Attendance';
 
 import Exam from '../pages/Exam'; 
-import ExamList from '../sections/exams/ExamList';
-import ExamDetail from '../sections/exams/ExamDetail';  
-import StudentSelection from '../sections/exams/StudentSelection';
+// import ExamList from '../sections/exams/ExamList';
+// import ExamDetail from '../sections/exams/ExamDetail';  
+// import StudentSelection from '../sections/exams/StudentSelection';
+
+import Report from '../pages/Report';
+import ReportList from '../sections/report/reportList';
+// import PaymentReport from '../sections/report/paymentReport/paymentReport';
+import ExamReport from '../sections/report/examReport/examReport';
+import ResultReport from '../sections/report/resultReport/resultReport';
 
 import { ToastProvider } from '../modals/ToastProvider';
 
@@ -119,13 +124,21 @@ function Panel() {
                     <Route path="/branch" element={<Branch />} />
                     <Route path="/attendance" element={<Attendance />} />
                     <Route path="/exam" element={<Exam />}>
-                        <Route index element={<ExamList />} />
+                        {/* <Route index element={<ExamList />} />
                         <Route path="detail" element={<ExamDetail />} />
-                        <Route path="student-selection" element={<StudentSelection />} />
+                        <Route path="student-selection" element={<StudentSelection />} /> */}
                       </Route>
                       <Route path="/exam-detail" element={<Navigate to="/exam/detail" replace />} />
                       <Route path="/student-selection" element={<Navigate to="/exam/student-selection" replace />} />
-                      <Route path="*" element={<div>404 - Page Not Found</div>} />
+
+                    <Route path="/report" element={<Report />}>
+                      <Route index element={<ReportList />} />
+                      {/* <Route path="paymentReport" element={<PaymentReport />} /> */}
+                      <Route path="examReport" element={<ExamReport />} />
+                      <Route path="resultReport" element={<ResultReport />} />
+                    </Route>
+
+                    <Route path="*" element={<div>404 - Page Not Found</div>} />
                   </Routes>
                 <Pagination
                   currentPage={1}
