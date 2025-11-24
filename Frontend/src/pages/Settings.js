@@ -1,9 +1,10 @@
 import React from "react";
+import SettingsSection from "../sections/settings/Settings";
 
 function Settings() {
   return (
-    <div className="Settings">
-      <h1>Settings</h1>
+    <div>
+      <SettingsSection />
     </div>
   );
 }
