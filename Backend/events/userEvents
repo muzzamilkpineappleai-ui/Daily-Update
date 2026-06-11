@@ -1,0 +1,15 @@
+exports.sendNewUserEvent = (user) => {
+  const broadcast = getBroadcaster();
+
+  if (broadcast) {
+    broadcast({
+      type: "NEW_USER",
+      user: {
+        username: user.username,
+        created_at: user.created_at instanceof Date
+          ? user.created_at.toISOString().replace("T", " ").split(".")[0]
+          : user.created_at
+      }
+    });
+  }
+};

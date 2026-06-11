@@ -1,0 +1,398 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: auto;
+}
+
+/* Modal Container */
+.id-card-modal {
+  width: 560px;
+  max-width: 95vw;
+  height: auto;
+  min-height: 280px;
+  max-height: 90vh;
+  margin: auto;
+  background-color: #1F6978;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Content Wrapper */
+.id-card-content-wrapper {
+  background-color: #1F6978;
+  width: 100%;
+  height: auto;
+  min-height: 260px; /* Ensure enough space for content */
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Header */
+.id-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Logo */
+.id-card-logo {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+/* Heading */
+.id-card-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+/* Line Separator */
+.id-card-line {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 10px 0;
+}
+
+/* Content */
+.id-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Left Section */
+.id-card-left {
+  flex: 1;
+  min-width: 100px;
+}
+
+/* Profile Picture */
+.id-card-profile-pic {
+  width: 100px;
+  height: 110px;
+  border-radius: 4px;
+  border: 3px solid #fff;
+  background-color: #fff;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Middle Section */
+.id-card-middle {
+  flex: 2;
+  text-align: left;
+}
+
+/* Info Rows */
+.id-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.id-card-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.id-card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  width: 90px;
+  margin-right: 10px;
+  text-align: left;
+}
+
+.id-card-separater {
+  margin: 0 10px;
+  color: #fff;
+}
+
+.id-card-value {
+  font-size: 12px;
+  color: #fff;
+  flex: 1;
+  text-align: left;
+}
+
+/* Right Section */
+.id-card-right {
+  flex: 1;
+  text-align: right;
+  min-width: 100px;
+}
+
+.id-card-qr-code {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Close Button */
+.id-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.id-close-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Download Button */
+.id-download-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 15px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #1F6978;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.id-download-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive Styles */
+
+/* Extra Small Screens (Phones, <= 480px) */
+@media (max-width: 480px) {
+  .id-card-modal {
+    width: 95vw;
+    min-height: 300px; /* Increased to accommodate content */
+    max-height: 90vh;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .id-card-content-wrapper {
+    padding: 8px;
+    min-height: 280px;
+  }
+
+  .id-card-header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .id-card-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+
+  .id-card-heading {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .id-card-line {
+    margin: 8px 0;
+  }
+
+  .id-card-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .id-card-left,
+  .id-card-middle,
+  .id-card-right {
+    flex: none;
+    width: 100%;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .id-card-profile-pic {
+    width: 80px;
+    height: 90px;
+    margin: 0 auto 8px;
+  }
+
+  .id-card-qr-code {
+    width: 80px;
+    height: 80px;
+    margin: 8px auto;
+  }
+
+  .id-card-row {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .id-card-label {
+    width: auto;
+    margin-right: 5px;
+    font-size: 12px;
+  }
+
+  .id-card-separater {
+    margin: 0 5px;
+  }
+
+  .id-card-value {
+    font-size: 11px;
+    width: auto;
+  }
+
+  .id-download-btn {
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Medium Screens (Tablets, 481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .id-card-modal {
+    width: 85vw;
+    min-height: 280px;
+    max-height: 85vh;
+    padding: 15px;
+    overflow: hidden;
+  }
+
+  .id-card-content-wrapper {
+    padding: 10px;
+    min-height: 260px;
+  }
+
+  .id-card-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .id-card-heading {
+    font-size: 18px;
+  }
+
+  .id-card-profile-pic {
+    width: 90px;
+    height: 100px;
+  }
+
+  .id-card-qr-code {
+    width: 90px;
+    height: 90px;
+  }
+
+  .id-card-label {
+    font-size: 12px;
+  }
+
+  .id-card-value {
+    font-size: 11px;
+  }
+
+  .id-download-btn {
+    padding: 7px 14px;
+  }
+}
+
+/* Landscape Orientation on Small Devices */
+@media (max-height: 480px) and (orientation: landscape) {
+  .id-card-modal {
+    width: 80vw;
+    min-height: 250px;
+    max-height: 90vh;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .id-card-profile-pic {
+    width: 80px;
+    height: 90px;
+  }
+
+  .id-card-qr-code {
+    width: 80px;
+    height: 80px;
+  }
+
+  .id-card-heading {
+    font-size: 16px;
+  }
+
+  .id-card-content {
+    gap: 8px;
+  }
+}
+
+/* Very Small Screens (e.g., Older Phones, <= 360px) */
+@media (max-width: 360px) {
+  .id-card-modal {
+    width: 98vw;
+    padding: 8px;
+    min-height: 280px;
+  }
+
+  .id-card-content-wrapper {
+    min-height: 260px;
+  }
+
+  .id-card-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .id-card-heading {
+    font-size: 14px;
+  }
+
+  .id-card-profile-pic {
+    width: 70px;
+    height: 80px;
+  }
+
+  .id-card-qr-code {
+    width: 70px;
+    height: 70px;
+  }
+
+  .id-card-label,
+  .id-card-value {
+    font-size: 10px;
+  }
+
+  .id-download-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}

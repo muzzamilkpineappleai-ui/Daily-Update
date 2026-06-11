@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+.hdr-content-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+}
+
+.hdr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 15px 30px;
+  background: rgba(211, 211, 211, 0.15);
+  height: 76px;
+  box-sizing: border-box;
+}
+
+.hdr-title-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.hdr-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hdr-notification-container {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #1F6978;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hdr-notification-img {
+  width: 19.87px;
+  height: 19.45px;
+}
+
+.hdr-mobile-menu-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hdr-row {
+    padding: 15px 10px;
+    gap: 0.5rem;
+  }
+
+  .hdr-title {
+    font-size: 18px;
+  }
+
+  .hdr-notification-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hdr-notification-img {
+    width: 18px;
+    height: 18px;
+  }
+}

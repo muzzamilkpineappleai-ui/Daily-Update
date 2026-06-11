@@ -1,0 +1,44 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
+    id: { type: DataTypes.BIGINT, primaryKey: true, autoIncrement: true, allowNull: false },
+    first_name: { type: DataTypes.STRING(255), allowNull: false },
+    last_name: { type: DataTypes.STRING(255), allowNull: false },
+    gender: { type: DataTypes.STRING(255), allowNull: false },
+    username: { type: DataTypes.STRING(255), allowNull: false, unique: true },
+    password: { type: DataTypes.STRING(255), allowNull: false },
+    email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
+    phn_num: { type: DataTypes.BIGINT, allowNull: false, unique: true },
+    address: { type: DataTypes.STRING(255), allowNull: false },
+    id_code: {type: DataTypes.TEXT,allowNull: false,unique: true },
+    date_of_birth: { type: DataTypes.DATEONLY, allowNull: false },
+    role_id: { type: DataTypes.INTEGER,allowNull: false,references: {model: 'roles',key: 'id'}},
+    status: { type: DataTypes.STRING(255), allowNull: false }
+  }, {
+    tableName: 'users',
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  });
+
+  User.associate = (models) => {
+    User.hasOne(models.StudentDetails, {
+      foreignKey: 'user_id',
+      as: 'student_details'  
+    });
+
+  User.belongsToMany(models.Slot, {
+    through: models.UserSlot,
+    foreignKey: 'user_id',
+    otherKey: 'slot_id',
+    as: 'Slots' 
+    });
+
+    User.belongsTo(models.Role, { foreignKey: "role_id", as: "Role" });
+    User.hasMany(models.UserSlot, { foreignKey: "user_id", as: "UserSlots" });
+    User.hasMany(models.UserGrade, { foreignKey: "user_id", as: "UserGrades" });
+    User.hasMany(models.UserBranch, { foreignKey: "user_id", as: "UserBranches" });
+    };
+
+  return User;
+};

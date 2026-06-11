@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+.report-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;    
+  justify-content: flex-start; 
+  padding: 20px;
+}
+
+.report-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;  
+  max-width: 900px;
+}
+
+.nav-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.icon-placeholder {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.icon-report {
+  width: 44px;
+  height: 44px;
+}
+
+@media (max-width: 768px) {
+  .cards-wrapper {
+    gap: 16px;
+  }
+
+  .nav-card {
+    width: 160px;
+    padding: 24px;
+  }
+
+  .icon-placeholder {
+    width: 56px;
+    height: 56px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+}

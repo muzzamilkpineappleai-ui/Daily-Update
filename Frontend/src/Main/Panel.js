@@ -1,0 +1,167 @@
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+import ProtectedRoute from './ProtectedRoute';
+
+import Sidebar from '../Components/Sidebar';
+import Header from '../Components/Header';
+// import Pagination from '../Components/Pagination';
+import Dashboard from '../pages/Dashboard';
+import Students from '../pages/Students';
+import Course from '../pages/Course';
+import Payments from '../pages/Payments';
+import Schedule from '../pages/Schedule';
+import Settings from '../pages/Settings';
+import Branch from '../pages/Branch';
+import Attendance from '../pages/Attendance';
+
+import Exam from '../pages/Exam';
+import ExamList from '../sections/exams/ExamList';
+import ExamDetail from '../sections/exams/ExamDetail';
+import StudentSelection from '../sections/exams/StudentSelection';
+
+import Report from '../pages/Report';
+import ReportList from '../sections/report/reportList';
+import PaymentReport from '../sections/report/paymentReport/paymentReport';
+import ExamReport from '../sections/report/examReport/examReport';
+import ResultReport from '../sections/report/resultReport/resultReport';
+
+function Panel() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <ProtectedRoute>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+        
+        {/* Top Blue Header Line */}
+        <div
+          style={{
+            height: '10px',
+            background: '#1F6978',
+            width: '100%',
+            position: 'fixed',
+            top: 0,
+            zIndex: 100,
+          }}
+        />
+
+        <div style={{ display: 'flex', flex: 1, marginTop: '10px' }}>
+
+          {/* Sidebar Desktop */}
+          {!isMobile && (
+            <div
+              style={{
+                width: '275px',
+                height: 'calc(100vh - 10px)',
+                position: 'fixed',
+                top: '10px',
+                zIndex: 10,
+              }}
+            >
+              <Sidebar />
+            </div>
+          )}
+
+          {/* Sidebar Mobile */}
+          {isMobile && drawerOpen && (
+            <>
+              <div
+                style={{
+                  position: 'fixed',
+                  top: 10,
+                  left: 0,
+                  height: '100vh',
+                  width: '275px',
+                  backgroundColor: '#fff',
+                  boxShadow: '2px 0 5px rgba(0,0,0,0.3)',
+                  zIndex: 200000,
+                }}
+              >
+                <Sidebar onClose={() => setDrawerOpen(false)} />
+              </div>
+
+              <div
+                style={{
+                  position: 'fixed',
+                  top: 10,
+                  left: '275px',
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: 'rgba(0,0,0,0.3)',
+                  zIndex: 199000,
+                }}
+                onClick={() => setDrawerOpen(false)}
+              />
+            </>
+          )}
+
+          {/* MAIN CONTENT */}
+          <div
+            style={{
+              marginLeft: isMobile ? 0 : '275px',
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              height: 'calc(100vh - 10px)',
+              overflow: 'hidden',
+            }}
+          >
+            <Header onMenuClick={() => setDrawerOpen(true)} />
+
+            <main
+              style={{
+                flex: 1,
+                padding: '30px',
+                overflowY: 'auto',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/students" element={<Students />} />
+                <Route path="/course" element={<Course />} />
+                <Route path="/payments" element={<Payments />} />
+                <Route path="/schedule" element={<Schedule />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/branch" element={<Branch />} />
+                <Route path="/attendance" element={<Attendance />} />
+
+                {/* Exam Routes */}
+                <Route path="/exam" element={<Exam />}>
+                  <Route index element={<ExamList />} />
+                  <Route path="detail" element={<ExamDetail />} />
+                  <Route path="student-selection" element={<StudentSelection />} />
+                </Route>
+
+                <Route path="/exam-detail" element={<Navigate to="/exam/detail" replace />} />
+                <Route path="/student-selection" element={<Navigate to="/exam/student-selection" replace />} />
+
+                {/* Report Routes */}
+                <Route path="/report" element={<Report />}>
+                  <Route index element={<ReportList />} />
+                  <Route path="paymentReport" element={<PaymentReport />} />
+                  <Route path="examReport" element={<ExamReport />} />
+                  <Route path="resultReport" element={<ResultReport />} />
+                </Route>
+
+                <Route path="*" element={<div>404 - Page Not Found</div>} />
+              </Routes>
+
+              {/* <Pagination currentPage={1} totalPages={5} onPageChange={(page) => console.log('Go to page:', page)} /> */}
+            </main>
+          </div>
+        </div>
+      </div>
+    </ProtectedRoute>
+  );
+}
+
+export default Panel;

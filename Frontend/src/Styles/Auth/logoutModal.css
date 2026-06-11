@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+.logout-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;          
+}
+
+.logout-modal-box {
+  width: 420px;
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.logout-icon-top {
+  font-size: 35px;
+  color: #d60000;
+  margin-bottom: 10px;
+}
+
+.logout-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 15px 0;
+  color: #000;
+}
+
+.logout-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 25px;
+}
+
+.cancel-btn {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  border: 1px solid #C4C4C4;
+  padding: 10px 22px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-btn {
+  font-family: 'Montserrat', sans-serif;
+  background: #F54040;
+  border: none;
+  padding: 10px 22px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .logout-modal-box {
+    width: 85%;
+    padding: 25px 20px;
+  }
+
+  .logout-text {
+    font-size: 16px;
+  }
+
+  .logout-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cancel-btn,
+  .logout-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+  }
+
+  .logout-icon-top {
+    font-size: 30px;
+  }
+}

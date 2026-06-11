@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.schedule-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  background: transparent;
+  table-layout: fixed;
+  min-width: 800px;
+}
+
+.schedule-table-container,
+.schedule-table-container1 {
+  padding: 10px;
+  background-color: white;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  box-sizing: border-box;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.schedule-table-container1 {
+  background-color: #D3D3D31A;
+}
+
+.schedule-th,
+.schedule-td {
+  font-size: 13px;
+  padding: 12px 9px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.schedule-th {
+  color: black;
+  font-weight: 700;
+}
+
+.schedule-td {
+  background-color: white;
+}
+
+/* Define column widths */
+.schedule-th:nth-child(1),
+.schedule-td:nth-child(1) { width: 12%; } /* Branch */
+
+.schedule-th:nth-child(2),
+.schedule-td:nth-child(2) { width: 18%; } /* Lecture Name */
+
+.schedule-th:nth-child(3),
+.schedule-td:nth-child(3) { width: 17%; } /* Course */
+
+.schedule-th:nth-child(4),
+.schedule-td:nth-child(4) { width: 12%; } /* Grade */
+
+.schedule-th:nth-child(5),
+.schedule-td:nth-child(5) { width: 12%; } /* Day */
+
+.schedule-th:nth-child(6),
+.schedule-td:nth-child(6) { width: 14%; } /* Time */
+
+.schedule-th:nth-child(7),
+.schedule-td:nth-child(7) { 
+  width: 15%; 
+  white-space: normal;
+  overflow: visible;
+} /* Action */
+
+.schedule-th:first-child,
+.schedule-td:first-child {
+  padding-left: 20px;
+}
+
+.schedule-th:last-child,
+.schedule-td:last-child {
+  padding-right: 20px;
+  text-align: center;
+}
+
+.schedule-th:nth-child(2),
+.schedule-th:nth-child(3),
+.schedule-td:nth-child(2),
+.schedule-td:nth-child(3) {
+  padding-left: 15px;
+}
+
+.schedule-btn {
+  padding: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.schedule-btn img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.schedule-btn:hover {
+  opacity: 0.85;
+}
+
+.action-cell {
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+.schedule-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.schedule-add-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.schedule-add-btn {
+  white-space: nowrap;
+  padding: 13px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #1F6978;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  width: 170px;
+  min-height: 44px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-add-btn:hover {
+  background-color: #15545f;
+}
+
+.schedule-search-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 100%;
+  height: 40px;
+  border: 1px solid #1F6978;
+  padding: 0 12px;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+.schedule-search-box input {
+  flex: 1;
+  height: 100%;              
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #000000;
+
+  padding: 0;              
+  margin: 0;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+.schedule-search-img {
+  width: 16.38px;
+  height: 16.39px;
+}
+
+/* Tablet devices (up to 768px) */
+@media screen and (max-width: 768px) {
+  .schedule-table-container,
+  .schedule-table-container1 {
+    padding: 8px;
+  }
+
+  .schedule-table {
+    min-width: 700px;
+  }
+
+  .schedule-th,
+  .schedule-td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .schedule-action-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 20px;
+    gap: 15px;
+  }
+
+  .schedule-add-btn-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .schedule-add-btn {
+    width: 100%;
+    max-width: 200px;
+    font-size: 14px;
+    padding: 12px;
+    justify-content: center;
+  }
+
+  .schedule-search-box {
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+  }
+
+  .schedule-search-box input {
+    font-size: 13px;
+  }
+
+  .schedule-search-img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Mobile devices (up to 480px) */
+@media screen and (max-width: 480px) {
+  .schedule-table {
+    min-width: 600px;
+  }
+
+  .schedule-th,
+  .schedule-td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .schedule-th:first-child,
+  .schedule-td:first-child {
+    padding-left: 10px;
+  }
+
+  .schedule-th:last-child,
+  .schedule-td:last-child {
+    padding-right: 10px;
+  }
+
+  .schedule-th:nth-child(2),
+  .schedule-th:nth-child(3),
+  .schedule-td:nth-child(2),
+  .schedule-td:nth-child(3) {
+    padding-left: 10px;
+  }
+
+  .schedule-btn img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .schedule-action-row {
+    padding-bottom: 15px;
+    gap: 10px;
+  }
+
+  .schedule-add-btn-container {
+    justify-content: center;
+  }
+
+  .schedule-add-btn {
+    font-size: 13px;
+    padding: 10px;
+    width: 100%;
+    max-width: 160px;
+    min-height: 40px;
+    justify-content: center;
+  }
+
+  .schedule-search-box {
+    height: 36px;
+    padding: 0 10px;
+  }
+
+  .schedule-search-box input {
+    font-size: 12px;
+  }
+
+  .schedule-search-img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Extra small devices (up to 360px) */
+@media screen and (max-width: 360px) {
+  .schedule-table {
+    min-width: 500px;
+  }
+
+  .schedule-th,
+  .schedule-td {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+
+  .schedule-add-btn {
+    font-size: 12px;
+    padding: 8px;
+    max-width: 140px;
+    min-height: 36px;
+  }
+
+  .schedule-search-box {
+    height: 32px;
+    padding: 0 8px;
+  }
+
+  .schedule-search-box input {
+    font-size: 11px;
+  }
+
+  .schedule-search-img {
+    width: 10px;
+    height: 10px;
+  }
+}

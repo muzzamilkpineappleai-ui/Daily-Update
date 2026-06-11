@@ -1,0 +1,358 @@
+.addCourseForm-course-catalog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.addCourseForm-course-catalog-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 800px;
+  /* height: 600px; */
+  box-sizing: border-box;
+  transition: width 0.3s ease, height 0.3s ease;
+  overflow-y: scroll;
+}
+
+.addCourseForm-course-catalog-modal.addCourseForm-expanded {
+  width: 800px;
+  height: 600px;
+}
+
+.addCourseForm-course-catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.addCourseForm-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addCourseForm-close-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+
+.addCourseForm-form-group {
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+.addCourseForm-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+
+.addCourseForm-form-group input,
+.addCourseForm-form-group select {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+}
+
+.addCourseForm-form-group input[name="fees"],
+.addCourseForm-form-group input[name="courseRecord"] {
+  height: 40px;
+}
+
+.addCourseForm-form-group input:focus,
+.addCourseForm-form-group select:focus {
+  outline: none;
+  border-color: #1F6978;
+  box-shadow: 0 0 5px rgba(31, 105, 120, 0.3);
+  background-color: #fff;
+}
+
+.addCourseForm-form-group input:hover,
+.addCourseForm-form-group select:hover {
+  border-color: #1F6978;
+  box-shadow: 0 0 3px rgba(31, 105, 120, 0.2);
+  background-color: #fff;
+}
+
+.addCourseForm-form-group input::placeholder,
+.addCourseForm-form-group select::placeholder {
+  color: #999999;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+}
+
+.addCourseForm-form-group input:-webkit-autofill,
+.addCourseForm-form-group input:-webkit-autofill:hover,
+.addCourseForm-form-group input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: #333;
+}
+
+.addCourseForm-course-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.addCourseForm-course-form-row {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  background-color: white;
+
+}
+
+.addCourseForm-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.addCourseForm-button-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  color: #1F6978;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  border: #1F6978 3px solid;
+  font-weight: bold;
+  width: calc(100% - 10px);
+  margin-left: 10px;
+}
+
+.addCourseForm-added-courses {
+  margin-top: 20px;
+}
+
+.addCourseForm-sepecifc-courses-table {
+  width: 100%;
+  border: 2px solid #1F6978;
+  margin-top: 1px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  width: calc(100% - 10px);
+  margin-left: 10px;
+}
+
+.addCourseForm-sepecifc-courses-table th,
+.addCourseForm-sepecifc-courses-table td {
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.addCourseForm-sepecifc-courses-table th {
+  background-color: #FFFFFF;
+}
+
+.addCourseForm-sepecifc-courses-table td {
+  background-color: #D3D3D31A;
+  padding: 5px;
+  margin-right: 0;
+}
+
+.addCourseForm-sepecifc-courses-table th:nth-child(1) { padding-left: 30px; }
+.addCourseForm-sepecifc-courses-table td:nth-child(1) { padding-left: 30px; }
+.addCourseForm-sepecifc-courses-table td:nth-child(2) { padding-left: 150px; }
+.addCourseForm-sepecifc-courses-table th:nth-child(2) { padding-left: 120px; }
+.addCourseForm-sepecifc-courses-table th:nth-child(3) { padding-left: 120px; }
+.addCourseForm-sepecifc-courses-table td:nth-child(3) { padding-left: 140px; }
+.addCourseForm-sepecifc-courses-table td:nth-child(4) { padding-left: 110px; }
+.addCourseForm-sepecifc-courses-table th:nth-child(4) { padding-left: 110px; }
+.addCourseForm-sepecifc-courses-table th:nth-child(5) { padding-left: 40px; }
+
+.addCourseForm-sepecifc-courses-table tr {
+  display: table-row;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.addCourseForm-sepecifc-courses-table tr:last-child {
+  border-bottom: none;
+}
+
+.addCourseForm-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 0;
+}
+
+.addCourseForm-action-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.addCourseForm-submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #1F6978;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  width: calc(100% - 10px);
+  margin-left: 10px;
+}
+
+.addCourseForm-sepecifc-courses-table tbody {
+  display: block;
+  overflow-x: auto;
+  min-width: 70%;
+  width: max-content;
+  max-height: 100px;
+}
+
+/* Responsive Section */
+@media (max-width: 768px) {
+  .addCourseForm-course-catalog-modal {
+    width: 90%;
+    padding: 15px;
+    min-height: 400px;
+    border-radius: 15px;
+  }
+
+  .addCourseForm-course-catalog-modal.addCourseForm-expanded {
+    width: 95%;
+    min-height: 860px;
+    border-radius: 15px;
+  }
+
+  .addCourseForm-course-form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .addCourseForm-form-group {
+    width: 100%;
+  }
+
+  .addCourseForm-form-group select {
+    width: 100%;
+    height: 10px;
+  }
+
+  .addCourseForm-form-group input,
+  .addCourseForm-form-group select {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .addCourseForm-form-group input[name="fees"],
+  .addCourseForm-form-group input[name="courseRecord"] {
+    width: 345px;
+    height: 40px;
+  }
+
+  .addCourseForm-button-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-left: 0;
+    width: calc(100% - 10px);
+  }
+
+  .addCourseForm-sepecifc-courses-table {
+    width: 100%;
+    font-size: 12px;
+    margin-left: 0;
+    width: calc(100% - 10px);
+  }
+
+  .addCourseForm-sepecifc-courses-table td,
+  .addCourseForm-sepecifc-courses-table th {
+    padding: 8px;
+    width: auto;
+  }
+
+  .addCourseForm-sepecifc-courses-table th:nth-child(1) { padding-left: 20px; }
+  .addCourseForm-sepecifc-courses-table td:nth-child(1) { padding-left: 25px; }
+  .addCourseForm-sepecifc-courses-table td:nth-child(2) { padding-left: 40px; }
+  .addCourseForm-sepecifc-courses-table th:nth-child(2) { padding-left: 20px; }
+  .addCourseForm-sepecifc-courses-table th:nth-child(3) { padding-left: 30px; }
+  .addCourseForm-sepecifc-courses-table td:nth-child(3) { padding-left: 40px; }
+  .addCourseForm-sepecifc-courses-table td:nth-child(4) { padding-left: 30px; }
+  .addCourseForm-sepecifc-courses-table th:nth-child(4) { padding-left: 10px; }
+  .addCourseForm-sepecifc-courses-table th:nth-child(5) { padding-left: 10px; }
+
+  .addCourseForm-action-btn {
+    margin-right: 0;
+  }
+
+  .addCourseForm-action-btn img {  
+    width: 18px;
+    height: 18px;
+  }
+
+  .addCourseForm-submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-left: 0;
+    width: calc(100% - 10px);
+  }
+
+  .addCourseForm-close-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .addCourseForm-sepecifc-courses-table tbody {
+    display: block;
+    overflow-x: auto;
+    min-width: 70%;
+    width: max-content;
+    max-height: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .addCourseForm-sepecifc-courses-table {
+    min-width: 420px;
+  }
+}

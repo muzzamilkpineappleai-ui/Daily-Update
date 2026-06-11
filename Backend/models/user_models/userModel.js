@@ -1,0 +1,105 @@
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define("User", {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false, 
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,  
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,  
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,  
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,  
+      validate: {
+        isEmail: true,  
+      },
+    },
+    phn_num: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    date_of_birth: {
+      type: DataTypes.STRING,  
+      allowNull: true,
+    },
+    role_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'roles',
+        key: 'id',
+      },
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'active',  
+      validate: {
+        isIn: [['active', 'inactive']],  
+      },
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    id_code: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      unique: true,
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+  }, {
+    tableName: "users",
+    timestamps: true,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+  });
+
+  User.associate = (models) => {
+    User.belongsTo(models.Role, { foreignKey: "role_id", as: "Role" });
+    User.hasOne(models.StudentDetails, { foreignKey: "user_id", as: "StudentDetail" });
+    User.hasOne(models.LecturerDetails, { foreignKey: "user_id", as: "LecturerDetail" }); 
+    User.hasOne(models.OtherUserDetails, { foreignKey: "user_id", as: "OtherDetail" });  
+    User.hasMany(models.UserSlot, { foreignKey: "user_id", as: "UserSlots" });
+    User.hasMany(models.UserGrade, { foreignKey: "user_id", as: "UserGrades" });
+    User.hasMany(models.UserBranch, { foreignKey: "user_id", as: "UserBranches" });
+    User.hasMany(models.UserBranchHistory, { foreignKey: "user_id", as: "UserBranchHistories" });  
+    User.belongsToMany(models.Slot, {
+      through: models.UserSlot,
+      foreignKey: "user_id",
+      otherKey: "slot_id",
+      as: "Slots",
+    });
+  };
+
+  return User;
+};

@@ -1,0 +1,341 @@
+.specificPaymentReport-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.specificPaymentReport-modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 600px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+  padding-top: 20px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+.specificPaymentReport-close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.specificPaymentReport-close-button:hover {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.specificPaymentReport-modal-header {
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+}
+
+.specificPaymentReport-header-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.specificPaymentReport-header-title h2 {
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.specificPaymentReport-modal-body{
+  padding: 10px 24px 20px;
+    flex: 1 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.specificPaymentReport-student-name p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.specificPaymentReport-payment-history {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  border: 1px solid #1F6978;
+}
+
+.specificPaymentReport-course-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  border: 1px solid #1F6978;
+  width: 70%;
+}
+
+.specificPaymentReport-course-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specificPaymentReport-course-table thead {
+  background-color: #f8f9fa;
+}
+
+.specificPaymentReport-course-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #e5e5e5;
+  white-space: nowrap;
+}
+
+.specificPaymentReport-course-table th:nth-child(2) {
+  text-align: center;
+  width: 30%;
+}
+
+.specificPaymentReport-course-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.specificPaymentReport-course-table td:nth-child(2) {
+  text-align: center;
+}
+
+.specificPaymentReport-course-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.specificPaymentReport-payment-table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+}
+
+.specificPaymentReport-payment-table thead {
+  background-color: #f2f2f2;
+}
+
+.specificPaymentReport-payment-table th {
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.specificPaymentReport-payment-table th:nth-child(2),
+.specificPaymentReport-payment-table th:nth-child(3) {
+  text-align: center;
+}
+
+.specificPaymentReport-payment-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.specificPaymentReport-payment-table td:nth-child(2),
+.specificPaymentReport-payment-table td:nth-child(3) {
+  text-align: center;
+}
+
+.specificPaymentReport-status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  min-width: 70px;
+}
+
+.specificPaymentReport-status-badge.specificPaymentReport-paid {
+  background-color: #4CAF50;
+}
+
+.specificPaymentReport-status-badge.specificPaymentReport-pending,
+.specificPaymentReport-status-badge.specificPaymentReport-unknown {
+  background-color: #F44336;
+}
+
+.specificPaymentReport-loading,
+.specificPaymentReport-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.specificPaymentReport-total-pending {
+  background-color: #f8f9fa;
+}
+
+.specificPaymentReport-total-pending td {
+  font-weight: 600;
+  color: #333;
+}
+
+.specificPaymentReport-generate-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding: 0 24px 20px;
+}
+
+.specificPaymentReport-generate-button {
+  padding: 10px 32px;
+  background-color: #1F6978;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 120px;
+}
+
+.specificPaymentReport-generate-button:hover {
+  background-color: #165560;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .specificPaymentReport-modal-content {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding-top: 20px;
+  }
+
+  .specificPaymentReport-header-title h2 {
+    font-size: 18px;
+    padding-left: 20px;
+  }
+
+  .specificPaymentReport-student-name p {
+    font-size: 13.5px;
+    margin-bottom: 16px;
+  }
+
+  .specificPaymentReport-course-table-container,
+  .specificPaymentReport-payment-history {
+    margin: 0 0 20px;
+    border-radius: 6px;
+  }
+
+  .specificPaymentReport-course-table th,
+  .specificPaymentReport-course-table td,
+  .specificPaymentReport-payment-table th,
+  .specificPaymentReport-payment-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .specificPaymentReport-status-badge {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .specificPaymentReport-close-button {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .specificPaymentReport-modal-overlay {
+    padding: 12px;
+  }
+
+  .specificPaymentReport-header-title h2 {
+    font-size: 17px;
+  }
+
+  .specificPaymentReport-student-name p {
+    font-size: 13px;
+  }
+
+  .specificPaymentReport-course-table th,
+  .specificPaymentReport-course-table td,
+  .specificPaymentReport-payment-table th,
+  .specificPaymentReport-payment-table td {
+    padding: 8px 10px;
+    font-size: 12.5px;
+  }
+
+  .specificPaymentReport-status-badge {
+    padding: 4px 10px;
+    font-size: 11.5px;
+  }
+
+  .specificPaymentReport-loading,
+  .specificPaymentReport-no-data {
+    font-size: 13px;
+    padding: 16px;
+  }
+
+  .specificPaymentReport-close-button {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .specificPaymentReport-course-table,
+  .specificPaymentReport-payment-table {
+    min-width: 380px;
+  }
+
+  .specificPaymentReport-course-table th,
+  .specificPaymentReport-course-table td,
+  .specificPaymentReport-payment-table th,
+  .specificPaymentReport-payment-table td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .specificPaymentReport-status-badge {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+}

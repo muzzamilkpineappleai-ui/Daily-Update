@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* WRAPPER */
+.set-wrapper {
+  font-family: "Poppins", sans-serif;
+}
+
+/* TOP SEARCH BAR */
+.set-top-search {
+  position: relative;
+  width: 320px;
+  margin-bottom: 10px;
+}
+
+.set-top-search input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: 1px solid rgba(31, 105, 120, 1);
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.set-top-search img {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* CONTENT BELOW SEARCH BAR */
+.set-container {
+  display: flex;
+  gap: 70px;
+}
+
+/* LEFT MENU */
+.set-left {
+  width: 200px;
+}
+
+.set-left p {
+  font-size: 16px;
+  margin: 12px 0;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.set-left .set-active {
+  font-weight: 700;
+  color: rgba(31, 105, 120, 1);
+}
+
+/* RIGHT CONTENT */
+.set-right {
+  width: 700px;
+}
+
+.set-right h2 {
+  margin-bottom: 8px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.set-desc {
+  margin-top: -5px;
+  color: black;
+  font-weight: 550;
+  margin-bottom: 20px;
+  width: 85%;
+}
+
+/* CARD */
+.set-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 30px 35px;
+  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.set-item {
+  display: flex;
+  gap: 18px;
+  padding-bottom: 20px;
+}
+
+.set-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.set-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+.set-info p {
+  margin: 3px 0;
+  color: black;
+  font-size: 16px;
+}
+
+.set-info span {
+  font-size: 15px;
+  color: #888;
+}
+
+.set-divider {
+  height: 1px;
+  background: #eaeaea;
+  margin-bottom: 20px;
+}
+
+/* PASSWORD CARD */
+.set-password-card {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  width: 600px;
+  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.set-password-field {
+  margin-bottom: 26px;
+}
+
+.set-password-field label {
+  margin-left: 100px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.set-password-input-box {
+  position: relative;
+}
+
+.set-password-input-box input {
+  width: 60%;
+  padding: 10px 40px 10px 14px;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-left: 100px;
+}
+
+.set-password-input-box img {
+  position: absolute;
+  width: 22px;
+  height: 20px;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.set-password-note {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #777;
+  margin-left: 100px;
+}
+
+/* SAVE BUTTON */
+.set-save-btn {
+  width: 170px;
+  padding: 12px 0;
+  background: rgba(31, 105, 120, 1);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 215px;
+}
+
+/* ERROR STATES */
+.set-password-input-box.set-error-border input {
+  border: 1px solid #e74c3c !important;
+}
+
+.set-password-note.set-error-text {
+  color: #e74c3c !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .set-wrapper { padding: 15px; }
+  .set-top-search { width: 100%; max-width: 400px; }
+  .set-container { flex-direction: column; gap: 20px; }
+  .set-left { width: 100%; }
+  .set-left p { margin: 10px 0; }
+  .set-right { width: 100%; }
+  .set-desc { width: 100%; }
+  .set-password-card { width: 90%; padding: 20px; margin: 0 auto; }
+
+  .set-password-field label {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .set-password-input-box input {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .set-password-input-box img {
+    right: 15px;
+  }
+
+  .set-password-note {
+    margin-left: 0;
+  }
+
+  .set-save-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .set-password-card { padding: 15px; }
+  .set-password-input-box input {
+    padding: 9px 11px;
+    font-size: 13px;
+  }
+}

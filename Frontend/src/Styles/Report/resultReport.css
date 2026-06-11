@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.rr-report-container {
+  background-color: #fff;
+  padding: 30px -1px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.rr-top-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+.rr-search-container {
+  position: relative;
+  width: 320px;
+  display: flex;
+  align-items: center;
+}
+.rr-search {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border: 1px solid rgba(31, 105, 120, 1);
+  border-radius: 6px;
+  font-size: 14px;
+}
+.rr-search-icon-right {
+  position: absolute;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.rr-dropdown-row {
+  display: flex;
+  gap: 15px;
+}
+.rr-dropdown {
+  padding: 10px 14px;
+  border: 1px solid rgba(31, 105, 120, 1);
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 10px 0px 0px;
+}
+.rr-course-grade {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.rr-table-section {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+}
+.rr-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background-color: rgba(211, 211, 211, 0.1);
+  padding: 10px;
+}
+.rr-view-th {
+  text-align: right;
+  padding-right: 60px;
+}
+.rr-th {
+  text-align: left;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.rr-th:nth-child(2) {
+  text-align: center;
+}
+.rr-th:nth-child(3){
+  text-align: right;
+  padding-right: 60px;
+}
+.rr-td {
+  background-color: #fff;
+  padding: 12px 20px;
+  font-size: 14px;
+}
+.rr-td:nth-child(2) {
+  text-align: center;
+  padding-right: 30px;
+}
+.rr-td:nth-child(3) {
+  text-align: right;
+  padding-right: 74px;
+}
+.rr-table-result {
+  padding: 12px 20px 12px 35px;
+}
+.rr-tbody tr {
+  border-radius: 8px;
+}
+.rr-tbody tr:hover {
+  background-color: #fdfdfd;
+}
+.rr-icon-cell {
+  text-align: center;
+}
+.rr-modal-table .rr-th:nth-child(2) {
+  text-align: center;
+}
+.rr-modal-table .rr-th:nth-child(3) {
+  text-align: right;
+}
+.rr-modal-table .rr-td:nth-child(2) {
+  padding-left: 8px;
+  text-align: center;
+}
+.rr-modal-table .rr-td:nth-child(3) {
+  padding-right: 28px;
+  text-align: right;
+}
+.rr-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+.rr-generate-btn {
+  background-color: rgba(31, 105, 120, 1);
+  color: white;
+  border: none;
+  padding: 13px 50px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  
+  /* This is the key fix — pushes button to the right */
+  margin-left: auto;
+  display: block;
+  margin-top: 30px; /* keeps your spacing */
+}
+.rr-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.rr-modal {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.rr-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.rr-modal-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+.rr-close-icon {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.rr-close-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+.rr-student-name {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.rr-modal-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+}
+.rr-modal-table .rr-th {
+  text-align: left;
+  font-weight: 600;
+  padding: 10px;
+}
+.rr-modal-table .rr-td {
+  background-color: #fff;
+  padding: 10px;
+}
+.rr-modal-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+/* ===========================
+   FINAL DROPDOWN FIX
+   =========================== */
+
+.rr-dropdown-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* wrapper */
+.rr-select-wrapper {
+  position: relative;
+  width: 140px;
+  flex: 1;
+  min-width: 120px;
+}
+
+/* select */
+.rr-dropdown {
+  width: 100%;
+  height: 42px;
+  padding: 0 38px 0 14px;
+  border: 1px solid rgba(31, 105, 120, 1);
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* arrow */
+.rr-arrow {
+  position: absolute;
+  right: 14px;
+  top: 60%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 20px;
+  color: rgba(31, 105, 120, 1);
+}
+
+/* ================= ADD BUTTON ================= */
+.rr-add-btn {
+  background-color: rgba(31, 105, 120, 1);
+  color: #ffffff;
+  border: none;
+  padding: 8px 30px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-top: -55px;
+}
+
+.rr-add-btn:hover {
+  background-color: #16535e;
+}
+
+.pdf-header {
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
+
+/* MOBILE: stack only on very small screens */
+@media (max-width: 600px) {
+  .rr-dropdown-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rr-select-wrapper {
+    width: 100%;
+  }
+}
+
+
+
+
+/* ===========================
+      MOBILE RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+  .rr-report-container { padding: 15px; max-width: 100%; }
+  .rr-top-section { align-items: flex-start; width: 100%; }
+  .rr-search-container { width: 100%; max-width: 400px; }
+  .rr-search { width: 100%; }
+  .rr-dropdown-row { flex-direction: column; width: 100%; gap: 10px; }
+  .rr-dropdown { width: 100%; margin: 5px 0; }
+  .rr-course-grade { margin: 12px 0 15px; }
+  .rr-table-section { padding: 10px; }
+  .rr-table { border-spacing: 0 8px; }
+  .rr-th { font-size: 13px; padding: 10px 15px; }
+  .rr-th:nth-child(2), .rr-td:nth-child(2) { text-align: center; }
+  .rr-th:nth-child(3), .rr-td:nth-child(3) { text-align: right; padding-right: 20px; }
+  .rr-td { padding: 10px 14px; font-size: 13px; }
+  .rr-modal { width: 90%; padding: 20px; }
+  .rr-modal-header h3 { font-size: 15px; }
+  .rr-close-icon { top: 15px; right: 15px; }
+  .rr-modal-table table { border-spacing: 0 5px; }
+  .rr-modal-table .rr-th, .rr-modal-table .rr-td { padding: 8px; font-size: 13px; }
+  .rr-modal-button-container { justify-content: center; }
+  .rr-button-container { justify-content: center; margin-top: 20px; }
+  .rr-generate-btn { width: 100%; padding: 12px 0; }
+}
+
+@media (max-width: 420px) {
+  .rr-th, .rr-td { font-size: 12px; padding: 8px 10px; }
+  .rr-search { padding: 9px 12px; }
+  .rr-dropdown { font-size: 13px; }
+  .rr-table-section { padding: 8px; }
+  .rr-modal { padding: 15px; }
+  .rr-generate-btn { padding: 11px 0; }
+}

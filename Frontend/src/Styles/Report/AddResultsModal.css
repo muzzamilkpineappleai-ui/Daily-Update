@@ -1,0 +1,221 @@
+/* =====================================================
+   ADD RESULTS MODAL – FULLY ISOLATED & OVERRIDE SAFE
+   ===================================================== */
+
+/* ================= OVERLAY ================= */
+
+.rr-add-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 99999 !important;
+  padding: 10px !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* ================= MODAL ================= */
+
+.rr-add-overlay .rr-add-modal {
+  width: 900px !important;
+  max-width: 95vw !important;
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  padding: 26px 30px 28px !important;
+  box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.18) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  max-height: 85vh !important;
+  overflow-y: auto !important;
+  position: relative !important;
+}
+
+/* ================= HEADER ================= */
+
+.rr-add-overlay .rr-add-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 12px !important;
+}
+
+.rr-add-overlay .rr-add-header h3 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  color: #111 !important;
+}
+
+.rr-add-overlay .rr-add-header img {
+  width: 18px !important;
+  height: 18px !important;
+  cursor: pointer !important;
+  opacity: 0.7 !important;
+}
+
+.rr-add-overlay .rr-add-header img:hover {
+  opacity: 1 !important;
+}
+
+/* ================= DROPDOWNS ================= */
+
+.rr-add-overlay .rr-add-body {
+  display: flex !important;
+  gap: 12px !important;
+  margin-top: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.rr-add-overlay .rr-add-select-wrapper {
+  position: relative !important;
+  width: 120px !important;
+}
+
+.rr-add-overlay .rr-add-dropdown {
+  width: 100% !important;
+  height: 44px !important;
+  padding: 0 36px 0 14px !important;
+  border: 1.6px solid rgba(31, 105, 120, 1) !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  appearance: none !important;
+}
+
+.rr-add-overlay .rr-add-dropdown:disabled {
+  background: #f1f1f1 !important;
+  cursor: not-allowed !important;
+}
+
+.rr-add-overlay .rr-add-arrow {
+  position: absolute !important;
+  right: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  pointer-events: none !important;
+  font-size: 14px !important;
+  color: rgba(31, 105, 120, 1) !important;
+}
+
+/* ================= TABLE CONTAINER ================= */
+
+.rr-add-overlay .rr-add-table-container {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 20px !important;
+  width: 100% !important;
+}
+
+.rr-add-overlay .rr-add-table {
+  width: 520px !important;
+  max-width: 100% !important;
+  border-collapse: collapse !important;
+  border: 1.6px solid rgba(31, 105, 120, 0.8) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+/* ================= TABLE HEADER ================= */
+
+.rr-add-overlay .rr-add-table thead th {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 10px 12px !important;
+  background: #f8f9fa !important;
+  text-align: center !important;
+  color: #222 !important;
+}
+
+/* ================= TABLE BODY ================= */
+
+.rr-add-overlay .rr-add-table tbody td {
+  font-size: 14px !important;
+  padding: 10px 12px !important;
+  text-align: center !important;
+  color: #333 !important;
+  border-top: 1px solid #eeeeee !important;
+}
+
+.rr-add-overlay .rr-add-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* ================= RESULT DROPDOWN ================= */
+
+.rr-add-overlay .rr-add-result-dropdown {
+  width: 70px !important;
+  height: 34px !important;
+  border: 1.6px solid rgba(31, 105, 120, 1) !important;
+  border-radius: 8px !important;
+  background: #ffffff !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  padding: 5px;
+}
+
+.rr-add-overlay .rr-add-result-dropdown:disabled {
+  background: #f1f1f1 !important;
+  cursor: not-allowed !important;
+}
+
+/* ================= FOOTER ================= */
+
+.rr-add-overlay .rr-add-footer {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin-top: 22px !important;
+}
+
+.rr-add-overlay .rr-update-btn {
+  background: rgba(31, 105, 120, 1) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 10px 38px !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+.rr-add-overlay .rr-update-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+.rr-add-overlay .rr-update-btn:hover {
+  background: #16535e !important;
+}
+
+/* FORCE BORDER VISIBILITY – FAILSAFE */
+.rr-add-overlay .rr-add-table {
+  border: none !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+
+  /* THIS IS THE KEY */
+  box-shadow: 0 0 0 1px rgba(31, 105, 120, 1) !important;
+}
+
+
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .rr-add-overlay .rr-add-modal {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+
+  .rr-add-overlay .rr-add-table {
+    width: 100% !important;
+  }
+
+  .rr-add-overlay .rr-add-body {
+    gap: 10px !important;
+  }
+}
